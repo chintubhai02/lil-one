@@ -1,0 +1,512 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    }
+    
+    html{
+    scroll-behavior:smooth;
+    }
+    
+    body{
+    
+    font-family:'Poppins',sans-serif;
+    background:#02030d;
+    color:#fff;
+    overflow-x:hidden;
+    
+    }
+    
+    /* ===============================
+    BACKGROUND
+    =================================*/
+    
+    #fireworks{
+    
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:5;
+    
+    }
+    
+    #stars{
+    
+    position:fixed;
+    inset:0;
+    
+    background-image:
+    
+    radial-gradient(white 1px,transparent 1px),
+    radial-gradient(white 1px,transparent 1px);
+    
+    background-size:80px 80px,140px 140px;
+    
+    background-position:0 0,40px 40px;
+    
+    animation:twinkle 4s infinite alternate;
+    
+    z-index:-2;
+    
+    }
+    
+    .overlay{
+    
+    position:fixed;
+    inset:0;
+    
+    background:
+    
+    linear-gradient(to bottom,
+    rgba(0,0,40,.15),
+    rgba(0,0,0,.85));
+    
+    z-index:-1;
+    
+    }
+    
+    @keyframes twinkle{
+    
+    from{
+    
+    opacity:.3;
+    
+    }
+    
+    to{
+    
+    opacity:1;
+    
+    }
+    
+    }
+    
+    /* ===============================
+    LOADER
+    =================================*/
+    
+    #loader{
+    
+    position:fixed;
+    
+    inset:0;
+    
+    display:flex;
+    
+    justify-content:center;
+    
+    align-items:center;
+    
+    background:black;
+    
+    z-index:9999;
+    
+    font-size:32px;
+    
+    font-family:'Great Vibes',cursive;
+    
+    }
+    
+    /* ===============================
+    HERO
+    =================================*/
+    
+    .hero{
+    
+    min-height:100vh;
+    
+    display:flex;
+    
+    justify-content:center;
+    
+    align-items:center;
+    
+    flex-direction:column;
+    
+    text-align:center;
+    
+    padding:25px;
+    
+    }
+    
+    .welcome{
+    
+    letter-spacing:4px;
+    
+    color:#ffc6ea;
+    
+    font-size:18px;
+    
+    margin-bottom:20px;
+    
+    }
+    
+    #typing{
+    
+    font-family:'Great Vibes',cursive;
+    
+    font-size:82px;
+    
+    color:#f529b8;
+    
+    text-shadow:
+    
+    0 0 20px hotpink,
+    
+    0 0 50px deeppink;
+    
+    }
+    
+    .subtitle{
+    
+    max-width:700px;
+    
+    margin-top:25px;
+    
+    font-size:19px;
+    
+    line-height:1.8;
+    
+    color:#ddd;
+    
+    }
+    
+    #startBtn{
+    
+    margin-top:45px;
+    
+    padding:16px 50px;
+    
+    font-size:18px;
+    
+    border:none;
+    
+    border-radius:50px;
+    
+    cursor:pointer;
+    
+    background:
+    
+    linear-gradient(45deg,
+    #ff0080,
+    #ff4cb8);
+    
+    color:white;
+    
+    transition:.4s;
+    
+    box-shadow:
+    
+    0 0 25px hotpink;
+    
+    }
+    
+    #startBtn:hover{
+    
+    transform:scale(1.08);
+    
+    box-shadow:
+    
+    0 0 50px deeppink;
+    
+    }
+    
+    /* Scroll */
+    
+    .scroll{
+    
+    position:absolute;
+    
+    bottom:25px;
+    
+    left:50%;
+    
+    transform:translateX(-50%);
+    
+    font-size:32px;
+    
+    animation:updown 1s infinite;
+    
+    color:white;
+    
+    }
+    
+    @keyframes updown{
+    
+    0%{
+    
+    transform:
+    
+    translate(-50%,0);
+    
+    }
+    
+    50%{
+    
+    transform:
+    
+    translate(-50%,10px);
+    
+    }
+    
+    100%{
+    
+    transform:
+    
+    translate(-50%,0);
+    
+    }
+    
+    }
+    /* ===============================
+COUNTDOWN
+=================================*/
+
+.countdown{
+    padding:100px 10%;
+    text-align:center;
+    }
+    
+    .countdown h2,
+    .gallery h2,
+    .letter h2{
+    font-size:45px;
+    margin-bottom:50px;
+    color:#ff7bc8;
+    }
+    
+    #timer{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+    }
+    
+    #timer div{
+    width:150px;
+    padding:30px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.1);
+    transition:.3s;
+    }
+    
+    #timer div:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px hotpink;
+    }
+    
+    #timer span{
+    display:block;
+    font-size:45px;
+    font-weight:bold;
+    color:#ff58b6;
+    }
+    
+    #timer small{
+    color:#ddd;
+    }
+    
+    /* ===============================
+    GALLERY
+    =================================*/
+    
+    .gallery{
+    padding:100px 10%;
+    }
+    
+    .photos{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:35px;
+        margin-top:50px;
+    }
+    
+    .photos img{
+        width:260px;
+        height:340px;
+        object-fit:cover;
+        background:#fff;
+        padding:12px 12px 45px;
+        border-radius:8px;
+        box-shadow:0 15px 35px rgba(255,105,180,.35);
+        transition:.5s ease;
+        cursor:pointer;
+    }
+    
+    /* Different tilt for each image */
+    .photos img:nth-child(1){
+        transform:rotate(-6deg);
+    }
+    
+    .photos img:nth-child(2){
+        transform:rotate(5deg);
+    }
+    
+    .photos img:nth-child(3){
+        transform:rotate(-3deg);
+    }
+    
+    .photos img:nth-child(4){
+        transform:rotate(4deg);
+    }
+    
+    .photos img:nth-child(5){
+        transform:rotate(-5deg);
+    }
+    
+    .photos img:nth-child(6){
+        transform:rotate(3deg);
+    }
+    
+    /* Hover Effect */
+    .photos img:hover{
+        transform:rotate(0deg) scale(1.08);
+        box-shadow:0 20px 45px rgba(255,105,180,.6);
+        z-index:10;
+    }
+    .photos figure{
+        margin:0;
+        text-align:center;
+    }
+    
+    .photos figcaption{
+        color:white;
+        margin-top:12px;
+        font-size:15px;
+        font-style:italic;
+        opacity:.9;
+    }
+    
+    /* ===============================
+    LETTER
+    =================================*/
+    
+    .letter{
+    padding:100px 10%;
+    text-align:center;
+    }
+    
+    #letterText{
+    max-width:850px;
+    margin:auto;
+    padding:40px;
+    line-height:2;
+    font-size:20px;
+    background:rgba(255,255,255,.08);
+    border-radius:25px;
+    backdrop-filter:blur(15px);
+    }
+    
+    /* ===============================
+    FINAL
+    =================================*/
+    
+    .final{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:40px;
+    }
+    
+    .final h1{
+    font-size:75px;
+    font-family:'Great Vibes',cursive;
+    color:#7a0404b0;
+    text-shadow:0 0 30px hotpink;
+    }
+    
+    .final p{
+    margin-top:20px;
+    font-size:22px;
+    color:#ddd;
+    }
+    
+    #celebrateBtn{
+    margin-top:40px;
+    padding:18px 45px;
+    font-size:18px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    background:linear-gradient(45deg,#ff0080,#ff5ab8);
+    color:white;
+    box-shadow:0 0 20px hotpink;
+    transition:.4s;
+    }
+    
+    #celebrateBtn:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 40px deeppink;
+    }
+    
+    /* Music Button */
+    
+    #musicBtn{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:65px;
+    height:65px;
+    border:none;
+    border-radius:50%;
+    background:#ff2d95;
+    color:#fff;
+    font-size:24px;
+    cursor:pointer;
+    box-shadow:0 0 25px hotpink;
+    z-index:1000;
+    }
+    
+    /* Footer */
+    
+    footer{
+    padding:30px;
+    text-align:center;
+    color:#aaa;
+    }
+    
+    /* Mobile */
+    
+    @media(max-width:768px){
+    
+    #typing{
+    font-size:48px;
+    }
+    
+    .final h1{
+    font-size:50px;
+    }
+    
+    #timer div{
+    width:120px;
+    }
+    
+    .photos img{
+    height:250px;
+    }
+    
+    section{
+    padding:70px 25px;
+    }
+    
+    }
+    /* Canvas Fireworks */
+
+#fireworks{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:-1;
+}
